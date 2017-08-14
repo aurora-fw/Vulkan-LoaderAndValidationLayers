@@ -8546,6 +8546,10 @@ VKAPI_ATTR void VKAPI_CALL CmdBeginRenderPass(VkCommandBuffer commandBuffer, con
                     cb_node->queue_submit_functions.push_back(function);
                 }
             }
+            const auto &subpass_desc = render_pass_state->createInfo.pSubpasses[0];
+            for (uint32_t i = 0; i < subpass_desc.inputAttachmentCount; ++i) {
+                // Mark input attachments as read
+            }
             if (clear_op_size > pRenderPassBegin->clearValueCount) {
                 skip |= log_msg(
                     dev_data->report_data, VK_DEBUG_REPORT_ERROR_BIT_EXT, VK_DEBUG_REPORT_OBJECT_TYPE_RENDER_PASS_EXT,
