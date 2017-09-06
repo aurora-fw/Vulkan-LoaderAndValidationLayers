@@ -812,7 +812,11 @@ static bool logInvalidAttachmentMessage(layer_data const *dev_data, const char *
 static bool validateAttachmentCompatibility(layer_data const *dev_data, const char *type1_string,
                                             const RENDER_PASS_STATE *rp1_state, const char *type2_string,
                                             const RENDER_PASS_STATE *rp2_state, uint32_t primary_attach, uint32_t secondary_attach,
+<<<<<<< HEAD
                                             const char *caller, UNIQUE_VALIDATION_ERROR_CODE error_code) {
+=======
+                                            bool is_multi, const char *caller, UNIQUE_VALIDATION_ERROR_CODE error_code) {
+>>>>>>> layers:Consolidate render pass compatibility
     bool skip = false;
     const auto &primaryPassCI = rp1_state->createInfo;
     const auto &secondaryPassCI = rp2_state->createInfo;
